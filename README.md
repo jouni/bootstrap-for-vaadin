@@ -1,4 +1,4 @@
-bootstrap-for-vaadin
+Bootstrap for Vaadin
 ====================
 
 Integrating Bootstrap CSS with Vaadin (proof-of-concept).
