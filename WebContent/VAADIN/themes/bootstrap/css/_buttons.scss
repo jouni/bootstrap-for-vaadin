@@ -1,0 +1,36 @@
+@mixin buttons {
+	
+	.v-button {
+		@extend .btn;
+	}
+	
+	.v-button-default,
+	.v-upload .v-button {
+		@extend .btn-default;
+	}
+	
+	.v-button-primary {
+		@extend .btn-primary;
+	}
+	
+	.v-button-success {
+		@extend .btn-success;
+	}
+	
+	.v-button-info {
+		@extend .btn-info;
+	}
+	
+	.v-button-warning {
+		@extend .btn-warning;
+	}
+	
+	.v-button-danger {
+		@extend .btn-danger;
+	}
+	
+	.v-button-link {
+		@extend .btn-link;
+	}
+	
+}

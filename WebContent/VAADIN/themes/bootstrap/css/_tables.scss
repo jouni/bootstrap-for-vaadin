@@ -1,0 +1,48 @@
+@mixin tables {
+	
+	//.v-table {
+	//	@extend table;
+	//}
+	
+	.v-table-resizer,
+	.v-table-sort-indicator {
+		display: inline;
+	}
+	
+	.v-table table {
+		@extend .table;
+		width: auto;
+		margin-bottom: 0;
+	}
+	
+	// TODO this should come from Bootstrap, but I didn't find a suitable selector to extend 
+	.v-table .v-table-header-cell,
+	.v-table .v-table-header-cell-asc,
+	.v-table .v-table-header-cell-desc,
+	.v-table .v-table-header-cell-rowheader {
+		font-weight: bold;
+		border-top-width: 0;
+	}
+	
+	.v-table-striped .v-table-body table {
+		@extend .table-striped;
+	}
+	
+	.v-table-bordered table {
+		@extend .table-bordered;
+	}
+	
+	.v-table-bordered .v-table-header table,
+	.v-table-bordered .v-table-header td {
+		border-bottom: 0;
+	}
+	
+	.v-table-hover .v-table-body table {
+		@extend .table-hover;
+	}
+	
+	.v-table-condensed table {
+		@extend .table-condensed;
+	}
+	
+}

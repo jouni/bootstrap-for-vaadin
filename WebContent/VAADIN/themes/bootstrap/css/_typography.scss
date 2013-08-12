@@ -1,0 +1,49 @@
+@mixin typography {
+	
+  .v-caption {
+  	@extend label;
+  }
+  
+  @for $i from 1 through 6 {
+  	.h#{$i} {
+  	  @extend h#{$i};
+  	}
+  }
+  
+  .bodycopy {
+  	@extend p;
+  }
+  
+  .v-widget.lead {
+  	@extend .lead;
+  }
+  
+  .small {
+  	@extend small;
+  }
+  
+  .v-widget.text-muted {
+  	@extend .text-muted;
+  }
+  
+  .v-widget.text-primary {
+  	@extend .text-primary;
+  }
+  
+  .v-widget.text-warning {
+  	@extend .text-warning;
+  }
+  
+  .v-widget.text-danger {
+  	@extend .text-danger;
+  }
+  
+  .v-widget.text-success {
+  	@extend .text-success;
+  }
+  
+  .v-widget.text-info {
+  	@extend .text-info;
+  }
+  
+}

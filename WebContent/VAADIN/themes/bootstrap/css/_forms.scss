@@ -1,0 +1,11 @@
+@mixin forms {
+	
+	.v-textfield {
+		@extend .form-control;
+	}
+	
+	.v-checkbox {
+		@extend .checkbox;
+	}
+	
+}
