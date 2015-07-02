@@ -1,3 +1,6 @@
+/* A copy of https://github.com/vaadin/vaadin/blob/master/WebContent/VAADIN/themes/base/layout/layout.scss */
+/* Needed to support Vaadin layouts */
+
 /*
 TODO
 - separate styles to proper places
@@ -10,205 +13,212 @@ TODO
 
 .v-vertical.v-margin-top,
 .v-horizontal.v-margin-top {
-	padding-top: 12px;
+  padding-top: 12px;
 }
 
 .v-vertical.v-margin-right,
 .v-horizontal.v-margin-right {
-	padding-right: 	12px;
+  padding-right:  12px;
 }
 
 .v-vertical.v-margin-bottom,
 .v-horizontal.v-margin-bottom {
-	padding-bottom: 12px;
+  padding-bottom: 12px;
 }
 
 .v-vertical.v-margin-left,
 .v-horizontal.v-margin-left {
-	padding-left: 12px;
+  padding-left: 12px;
 }
 
 /* Different for historical reasons: previously was inherited directly from Base theme */
 /* TODO unify these values in version 7 */
 .v-gridlayout.v-layout-margin-top {
-	padding-top: 24px;
+  padding-top: 24px;
 }
 .v-gridlayout,
 .v-verticallayout,
 .v-horizontallayout {
-	font-size: 0;
-	line-height: normal;
+  font-size: 0;
+  line-height: normal;
 }
 
 .v-gridlayout.v-layout-margin-bottom {
-	padding-bottom: 24px;
+  padding-bottom: 24px;
 }
 .v-gridlayout.v-layout-margin-left {
-	padding-left: 24px;
+  padding-left: 24px;
 } 
 .v-gridlayout.v-layout-margin-right {
-	padding-right: 24px;
+  padding-right: 24px;
 }
 .v-gridlayout .v-layout-spacing-on {
-	padding-left: 12px;
-	padding-top: 12px;
+  padding-left: 12px;
+  padding-top: 12px;
 }
 
 .v-spacing {
-	width: 6px;
-	height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
 .v-vertical,
 .v-horizontal {
-	display: inline-block;	
+  display: inline-block;  
 }
 
 div.v-layout.v-horizontal.v-widget {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .v-layout.v-vertical > .v-expand,
 .v-layout.v-horizontal > .v-expand {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 100%;
-	height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 .v-slot,
 .v-spacing {
-	display: inline-block;
-	white-space: normal;
-	vertical-align: top;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
 }
 
 /* Clear any floats inside the slot, to prevent unwanted collapsing */
 .v-vertical > .v-slot:after {
-	display: inline-block;
-	clear: both;
-	width: 0;
-	height: 0;
-	overflow: hidden;
-	line-height:0;
+  display: inline-block;
+  clear: both;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  line-height:0;
 }
 
 .v-vertical > .v-slot,
 .v-vertical > .v-expand > .v-slot {
-	display: block;
-	clear: both;
+  display: block;
+  clear: both;
 }
 
 .v-horizontal > .v-slot,
 .v-horizontal > .v-expand > .v-slot {
-	height: 100%;
+  height: 100%;
+}
+
+/* Workaround for IE8+IE9 bug where clicking inside an input area which is inside a div with negative margin causes cursor position to jump to wrong position. See #11152 */
+.v-horizontal > .v-expand > .v-slot {
+  position: relative;
 }
 
 .v-vertical > .v-spacing,
 .v-vertical > .v-expand > .v-spacing {
-	width: 0;
-	display: block;
-	clear: both;
+  width: 0;
+  display: block;
+  clear: both;
 }
 
 .v-horizontal > .v-spacing,
 .v-horizontal > .v-expand > .v-spacing {
-	height: 0;
+  height: 0;
 }
 
 .v-align-middle:before,
 .v-align-bottom:before,
 .v-expand > .v-align-middle:before,
 .v-expand > .v-align-bottom:before {
-	content: "";
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
-	width: 0;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0;
 }
 
 .v-align-middle,
 .v-align-bottom {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .v-align-middle > .v-widget,
+.v-align-right > .v-widget,
+.v-align-center > .v-widget,
 .v-align-bottom > .v-widget {
-	display: inline-block;
+  display: inline-block;
 }
 
 .v-align-middle,
 .v-align-middle > .v-widget {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 .v-align-bottom,
 .v-align-bottom > .v-widget {
-	vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 .v-align-center {
-	text-align: center;
+  text-align: center;
 }
 
 .v-align-center > .v-widget {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .v-align-right {
-	text-align: right;
+  text-align: right;
 }
 
 .v-align-right > .v-widget {
-	margin-left: auto;
+  margin-left: auto;
 }
 
 .v-has-caption,
 .v-has-caption > .v-caption {
-	display: inline-block; /* Force natural width to zero */
+  display: inline-block; /* Force natural width to zero */
 }
 
 .v-caption {
-	overflow: visible;
-	vertical-align: middle;
+  overflow: visible;
+  vertical-align: middle;
 }
 
 .v-caption-on-left,
 .v-caption-on-right {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .v-caption-on-top > .v-caption,
 .v-caption-on-bottom > .v-caption {
-	display: block;
+  display: block;
 }
 
 .v-caption-on-left > .v-caption {
-	padding-right: .5em;
+  padding-right: .5em;
 }
 
 .v-caption-on-right > .v-caption {
- 	vertical-align:top;
+  vertical-align:top;
 }
 
 .v-caption-on-left > .v-widget,
 .v-caption-on-right > .v-widget {
-	display: inline-block;
-	vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .v-has-caption.v-has-width > .v-widget {
-	width: 100% !important;
+  width: 100% !important;
 }
 
 .v-has-caption.v-has-height > .v-widget {
-	height: 100% !important;
+  height: 100% !important;
 }
 
 .v-errorindicator {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 }

@@ -1,4 +1,7 @@
-.class
+*.class
 .project
 .settings
 .settings/*
+build
+build/*
+WebContent/VAADIN/themes/bootstrap/.sass-cache
